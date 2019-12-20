@@ -3,13 +3,21 @@
     <img src="./assets/logo.png">
     <div>
       <el-button @click="startHacking">Start</el-button>
+      <view-content :view-content-data="mockData"></view-content>
     </div>
   </div>
 </template>
 
 <script>
+import { ViewContent } from "./visual-log/components/ViewContent";
+
 export default {
   name: "App",
+  data () {
+    return {
+      mockData: [{index: 1, lineData: "It works!"}]
+    }
+  },
   methods: {
     startHacking() {
       this.$notify({
@@ -20,6 +28,9 @@ export default {
         duration: 5000
       });
     }
+  },
+  components: {
+    ViewContent
   }
 };
 </script>
