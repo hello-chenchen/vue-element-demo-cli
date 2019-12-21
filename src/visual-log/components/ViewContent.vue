@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import { ViewLines } from "./ViewLines";
+import ViewLines from "./ViewLines.vue";
 export default {
     name: "ViewContent",
     data () {
@@ -12,7 +12,7 @@ export default {
     },
     props: {
         viewContentData: {
-            type: Object,
+            type: Array,
             default: () => {
                 return {};
             }

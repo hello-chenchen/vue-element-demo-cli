@@ -9,13 +9,14 @@
 </template>
 
 <script>
-import { ViewContent } from "./visual-log/components/ViewContent";
+import ViewContent from "./visual-log/components/ViewContent.vue";
+import { LineType } from "./visual-log/common/LineType";
 
 export default {
   name: "App",
   data () {
     return {
-      mockData: [{index: 1, lineData: "It works!"}]
+      mockData: [{index: 1, lineData: {type: LineType.info, message: "test1"}}, {index: 2, lineData: {type: LineType.error, message: "test2"}}]
     }
   },
   methods: {

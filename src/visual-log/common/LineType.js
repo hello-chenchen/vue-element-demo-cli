@@ -4,4 +4,4 @@ const LineType = {
     error: 3
 }
 
-export { LineType }
+export { LineType };

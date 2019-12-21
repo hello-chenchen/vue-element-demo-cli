@@ -1,13 +1,13 @@
 <template>
     <div class="view-lines">
-        <div v-for="line in lines" v-bind:key="line.index">
+        <div v-for="line in linesData" v-bind:key="line.index">
             <view-Line :line-data="line.lineData"></view-Line>
         </div>
-    </div> 
+    </div>
 </template>
 
 <script>
-import { ViewLine } from "./ViewLine";
+import ViewLine from "./ViewLine.vue";
 export default {
     name: "ViewLines",
     data () {
