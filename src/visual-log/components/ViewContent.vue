@@ -1,6 +1,6 @@
 <template>
     <div class="view-content">
-        <view-Lines :lines-data="viewContentData"></view-Lines>
+        <view-Lines :lines-data="contentData.viewData"></view-Lines>
     </div>
 </template>
 <script>
@@ -11,10 +11,13 @@ export default {
         return {};
     },
     props: {
-        viewContentData: {
-            type: Array,
+        contentData: {
+            type: Object,
             default: () => {
-                return {};
+                return {
+                    options:{},
+                    viewData:[]
+                };
             }
         }
     },
