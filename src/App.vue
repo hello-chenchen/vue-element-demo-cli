@@ -10,7 +10,7 @@
 
 <script>
 import ViewContent from "./visual-log/components/ViewContent.vue";
-import { LineType } from "./visual-log/common/LineType";
+import { LineType, ViewModeType } from "./visual-log/components/VisualLogType";
 
 export default {
   name: "App",
@@ -18,13 +18,11 @@ export default {
     return {
       mockData: {
         options: {
-          viewMode: "Don't know"
+          viewMode: ViewModeType.containLineNum
         },
-        viewData: [
-          {index: 1, lineData: {type: LineType.info, message: "test1"}},
-          {index: 2, lineData: {type: LineType.error, message: "test2"}}
-          ]
-      }
+        viewData: []
+      },
+      index: 1
     }
   },
   methods: {
@@ -36,6 +34,8 @@ export default {
           "We've laid the ground work for you. It's time for you to build something epic!",
         duration: 5000
       });
+      this.mockData.viewData.push({index: this.index, lineData: {type: LineType.error, message: "test"+this.index}});
+      this.index++;
     }
   },
   components: {

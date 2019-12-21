@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { LineType } from "./../common/LineType";
+import { LineType } from "./VisualLogType"
 export default {
     name: "ViewLine",
     data () {
@@ -23,12 +23,13 @@ export default {
         }
     },
     mounted () {
-        console.log('ViewLine');
-        console.log(this.lineData);
     }
 }
 </script>
 
 <style>
-
+.span-line {
+    display: block;
+    text-align: left;
+}
 </style>

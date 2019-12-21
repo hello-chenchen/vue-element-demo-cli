@@ -26,8 +26,6 @@ export default {
         ViewLine
     },
     mounted () {
-        console.log('ViewLines');
-        console.log(this.linesData);
     }
 }
 </script>

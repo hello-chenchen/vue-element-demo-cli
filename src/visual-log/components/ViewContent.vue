@@ -25,8 +25,6 @@ export default {
         ViewLines
     },
     mounted () {
-        console.log('ViewContent');
-        console.log(this.viewContentData);
     }
 }
 </script>
