@@ -2,8 +2,15 @@
   <div id="app">
     <img src="./assets/logo.png" />
     <div>
-      <el-button @click="startHacking">Start</el-button>
+      <el-button @click="startCalc">Calc</el-button>
+      <el-button @click="startShow">Show</el-button>
+      <el-drawer
+      title="Visual Log Drawer"
+      :visible.sync="showDrawer"
+      :with-header="false"
+      direction="btt">
       <view-content :content-data="mockData"></view-content>
+      </el-drawer>
     </div>
   </div>
 </template>
@@ -22,20 +29,17 @@ export default {
         },
         viewData: []
       },
-      index: 1
+      index: 1,
+      showDrawer: false
     }
   },
   methods: {
-    startHacking() {
-      this.$notify({
-        title: "It works!",
-        type: "success",
-        message:
-          "We've laid the ground work for you. It's time for you to build something epic!",
-        duration: 5000
-      });
+    startCalc() {
       this.mockData.viewData.push({index: this.index, lineData: {type: LineType.error, message: "test"+this.index}});
       this.index++;
+    },
+    startShow() {
+      this.showDrawer = true;
     }
   },
   components: {
